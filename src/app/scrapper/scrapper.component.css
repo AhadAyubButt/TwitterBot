@@ -1,0 +1,69 @@
+.card {
+  background-color: #F0F0F0;
+  color: #1DA1F2;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h5 {
+  text-align: center !important;
+}
+
+.tablestyle {
+  height: 70vh !important;
+  overflow: auto;
+}
+
+.modal-dialog {
+  align-items: center;
+  overflow: auto;
+  max-width: 40% !important;
+}
+
+.containertable {
+  background-color: red;
+  height: 50vh;
+}
+
+.modal-content {
+  background-color: #14171A !important;
+}
+
+.modal-title {
+  color: white;
+}
+
+.whiteText {
+  color: white;
+}
+
+.TableDataScrapper {
+  background-color: grey !important;
+}
+
+.ScrapperData {
+  height: 50vh !important;
+  overflow: auto;
+}
+
+.TextareaDiv {
+  width: 100%;
+  color: black;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.remaning {
+  color: white;
+  font-weight: 200;
+}
+
+.borderRad {
+  border: 1px solid;
+}
+
+.TwitterLoader {
+  margin-top: 20vh;
+}

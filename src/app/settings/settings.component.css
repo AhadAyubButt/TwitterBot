@@ -1,0 +1,22 @@
+.container{
+    margin-top: 1%;
+}
+
+.TableDivHeight{
+    height: 50vh !important;
+    overflow: auto;
+}
+
+.Pause{
+    height: 100%;
+}
+
+.TwitterLoader{
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.borderRad {
+    border: 1px solid;
+  }

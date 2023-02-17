@@ -1,0 +1,75 @@
+.TextareaDiv {
+    width: 100%;
+    color: white;
+    border-radius: 5px;
+    background-color: black;
+  }
+  
+  .whiteText,
+  .input-field {
+    color: white;
+  }
+  
+  .tablestyle {
+    height: 40vh !important;
+  }
+  
+  .modal-dialog {
+    align-items: center;
+    overflow: auto;
+    max-width: 60% !important;
+  }
+  
+  .containertable {
+    background-color: red;
+  }
+  
+  .modal-content {
+    background-color: #14171A !important;
+  }
+  
+  .modal-title {
+    color: white;
+  }
+  
+  .whiteText {
+    color: white;
+  }
+  
+  .TableDataScrapper {
+    background-color: grey !important;
+    height: 40vh !important;
+    overflow: auto;
+  }
+  
+  
+  .TextareaDiv {
+    width: 100%;
+    color: white;
+    border-radius: 5px;
+    background-color: black;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .remaning{
+    color: white;
+    font-weight: 200;
+  }
+  
+  .containerTable{
+    height: 55vh !important;
+    overflow: auto;
+  }
+  
+  .containerModalTable{
+    height: 38vh !important;
+    overflow: auto;
+  }
+
+  .TwitterLoader {
+    margin-top: 20vh;
+  }
+  

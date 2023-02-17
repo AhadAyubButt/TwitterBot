@@ -1,0 +1,320 @@
+<div class="container">
+  <div class="container-fluid">
+    <br>
+
+    <ng-template #loading>
+      <iframe class="d-flex flex-row justify-content-center TwitterLoader"
+        src="https://embed.lottiefiles.com/animation/70339"></iframe>
+    </ng-template>
+
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card tablestyle">
+          <h2>Currency Rate</h2>
+          <div class="" *ngIf="listCurr.length > 0; else loading">
+            <div class="" *ngIf="listCurr.length > 0;">
+              <table class="table align-middle mb-0 bg-white tablestyle">
+                <thead class="bg-light">
+                  <tr>
+                    <th>Country/Currency</th>
+                    <th>Rate</th>
+                    <th>Change</th>
+                    <th>Trend</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let list of listCurr">
+                    <td>
+                      <div class="d-flex align-items-center ">
+                        <img src="../../assets/{{list.RatePair}}.svg" class="rounded-circle borderRad"
+                          alt="" style="width: 45px; height: 45px" />
+                        <div class="ms-3">
+                          <p class="fw-bold mb-1">{{list.RatePair}}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">{{list.Amount}}</p>
+                    <td *ngIf="list.ChangePercent > '0'">
+                      <span class="badge bg-success rounded-pill d-inline">{{list.ChangePercent}}%</span>
+                    </td>
+                    <td *ngIf="list.ChangePercent < '0'">
+                      <span class="badge bg-danger rounded-pill d-inline">{{list.ChangePercent}}%</span>
+                    </td>
+                    <td *ngIf="list.ChangePercent == '0'">
+                      <span class="badge bg-primary rounded-pill d-inline">{{list.ChangePercent}}%</span>
+                    </td>
+                    <td *ngIf="list.ChangePercent > '0'">
+                      <i class="bi bi-arrow-up" style="color: green;"></i>
+                    </td>
+                    <td *ngIf="list.ChangePercent < '0'">
+                      <i class="bi bi-arrow-down" style="color: red;"></i>
+                    </td>
+                    <td *ngIf="list.ChangePercent == '0'">
+                      <i class="bi bi-arrow-up" style="color: grey;"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+        <div class="buttoncontainer">
+          <button class="btn btn-primary col-2 float-start" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+            style="width: 100%;">Edit</button>
+        </div>
+      </div>
+
+      <ng-template #loading>
+        <iframe class="d-flex flex-row justify-content-center TwitterLoader"
+          src="https://embed.lottiefiles.com/animation/70339"></iframe>
+      </ng-template>
+
+      <div class="col-lg-6">
+        <div class="card tablestyle">
+          <h2>Currency Conditional Fetch</h2>
+          <div class="" *ngIf="listcheckCurr.length > 0; else loading">
+            <div class="" *ngIf="listcheckCurr.length > 0;">
+              <table class="table align-top mb-0 bg-white tablestyle ">
+                <thead class="bg-light">
+                  <tr>
+                    <th>Country/Currency</th>
+                    <th>Rate</th>
+                    <th>Change</th>
+                    <th>Trend</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let list of listcheckCurr">
+                    <td>
+                      <div class="d-flex align-items-center ">
+                        <img src="../../assets/{{list.RatePair}}.svg" class="rounded-circle borderRad"
+                          alt="" style="width: 45px; height: 45px" />
+                        <div class="ms-3">
+                          <p class="fw-bold mb-1">{{list.RatePair}}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">{{list.Amount}}</p>
+                    <td *ngIf="list.ChangePercent > '0'">
+                      <span class="badge bg-success rounded-pill d-inline">{{list.ChangePercent}}%</span>
+                    </td>
+                    <td *ngIf="list.ChangePercent < '0'">
+                      <span class="badge bg-danger rounded-pill d-inline">{{list.ChangePercent}}%</span>
+                    </td>
+                    <td *ngIf="list.ChangePercent == '0'">
+                      <span class="badge bg-primary rounded-pill d-inline">{{list.ChangePercent}}%</span>
+                    </td>
+                    <td *ngIf="list.ChangePercent > '0'">
+                      <i class="bi bi-arrow-up" style="color: green;"></i>
+                    </td>
+                    <td *ngIf="list.ChangePercent < '0'">
+                      <i class="bi bi-arrow-down" style="color: red;"></i>
+                    </td>
+                    <td *ngIf="list.ChangePercent == '0'">
+                      <i class="bi bi-arrow-up" style="color: grey;"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="buttoncontainer">
+          <button class="btn btn-primary col-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"
+            style="width: 100%;">Edit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Currency Rate</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="ScrapperData">
+            <div class="TableDataScrapper">
+              <table class="table align-middle bg-white ScrapperTableData">
+
+                <thead class="bg-light">
+                  <tr>
+                    <th>Country/Currency</th>
+                    <th>Rate</th>
+                    <th>Change</th>
+                    <th>Trend</th>
+                    <th>Status</th>
+                    <!-- <th>Inverse</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let list of listCurr">
+                    <td>
+                      <div class="d-flex align-items-center ">
+                        <img src="../../assets/{{list.RatePair}}.svg" class="rounded-circle borderRad"
+                          alt="" style="width: 45px; height: 45px" />
+                        <div class="ms-3">
+                          <p class="fw-bold mb-1">{{list.RatePair}}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1" id="updaterate">{{list.Amount}}</p>
+                    <td *ngIf="list.ChangePercent > '0'">
+                      <span class="badge bg-success rounded-pill d-inline">{{list.ChangePercent}}%</span>
+                    </td>
+                    <td *ngIf="list.ChangePercent < '0'">
+                      <span class="badge bg-danger rounded-pill d-inline">{{list.ChangePercent}}%</span>
+                    </td>
+                    <td *ngIf="list.ChangePercent == '0'">
+                      <span class="badge bg-primary rounded-pill d-inline">{{list.ChangePercent}}%</span>
+                    </td>
+                    <td *ngIf="list.ChangePercent > '0'">
+                      <i class="bi bi-arrow-up" style="color: green;"></i>
+                    </td>
+                    <td *ngIf="list.ChangePercent == '0'">
+                      <i class="bi bi-arrow-up" style="color: grey;"></i>
+                    </td>
+                    <td *ngIf="list.ChangePercent < '0'">
+                      <i class="bi bi-arrow-down" style="color: red;"></i>
+                    </td>
+                    <td>
+                      <!-- <button type="button" *ngIf="list.Flag == true"
+                        class="btn btn-link btn-sm badge bg-danger rounded-pill d-inline"
+                        (click)="disableflagupdate(list)">
+                        Disable
+                      </button>
+                      <button type="button" *ngIf="list.Flag == false"
+                        class="btn btn-sm badge bg-success btn-link rounded-pill d-inline"
+                        (click)="enableflagupdate(list)">
+                        Enable
+                      </button> -->
+                      <!-- <button  type="button" class="btn btn-link btn-sm btn-rounded" (click)="checkCurr(list)">
+                      <i class="bi bi-check-lg"></i>
+                    </button> -->
+                      <p *ngIf="list.Flag == true">
+                        Enabled
+                      </p>
+                      <p *ngIf="list.Flag == false">
+                        Disabled
+                      </p>
+                      <!-- <button  type="button" class="btn btn-link btn-sm btn-rounded" (click)="checkCurr(list)">
+                      <i class="bi bi-check-lg"></i>
+                    </button> -->
+                    </td>
+                    <!-- <td>
+                      <button class="btn btn-sm badge bg-primary rounded-pill d-inline" (click)="InverseCurrency(list)">
+                        Inverse
+                      </button>
+                    </td> -->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="m-3">
+            <h5 class="d-flex justify-content-center align-items-center whiteText"><b>Tweet to Post</b></h5>
+            <div class="divText">
+
+              <textarea class="TextareaDiv" name="" id="" maxlength="280" cols="20" rows="5"
+                placeholder="Your Text Here" [formControl]="twitterStatus">
+              </textarea>
+              <span class="remaning">{{ PostLength | async }} / 280</span>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" (click)="FetchTwitterPost()">Fetch</button>
+            <button type="button" class="btn btn-primary" (click)="postallTwitter()">Post</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2nd modal -->
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel1">Currency Conditional Fetch</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="ScrapperData">
+            <div class="TableDataScrapper">
+              <table class="table align-middle mb-0 bg-white ScrapperTableData">
+                <thead class="bg-light">
+                  <tr>
+                    <th>Country/Currency</th>
+                    <th>Rate</th>
+                    <th>Change</th>
+                    <th>Trend</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let list of listcheckCurr">
+                    <td>
+                      <div class="d-flex align-items-center ">
+                        <img src="../../assets/{{list.RatePair}}.svg" class="rounded-circle borderRad"
+                          alt="" style="width: 45px; height: 45px" />
+                        <div class="ms-3">
+                          <p class="fw-bold mb-1">{{list.RatePair}}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">{{list.Amount}}</p>
+                    <td *ngIf="list.ChangePercent > '0'">
+                      <span class="badge bg-success rounded-pill d-inline">{{list.ChangePercent}}%</span>
+                    </td>
+                    <td *ngIf="list.ChangePercent < '0'">
+                      <span class="badge bg-danger rounded-pill d-inline">{{list.ChangePercent}}%</span>
+                    </td>
+                    <td *ngIf="list.ChangePercent == '0'">
+                      <span class="badge bg-primary rounded-pill d-inline">{{list.ChangePercent}}%</span>
+                    </td>
+                    <td *ngIf="list.ChangePercent > '0'">
+                      <i class="bi bi-arrow-up" style="color: green;"></i>
+                    </td>
+                    <td *ngIf="list.ChangePercent < '0'">
+                      <i class="bi bi-arrow-down" style="color: red;"></i>
+                    </td>
+                    <td *ngIf="list.ChangePercent == '0'">
+                      <i class="bi bi-arrow-up" style="color: down;"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="m-3">
+            <h5 class="d-flex justify-content-center align-items-center whiteText"><b>Tweet to Post</b></h5>
+            <div class="divText">
+              <textarea class="TextareaDiv" name="" id="" maxlength="280" cols="20" rows="5" style="width: 100%;"
+                placeholder="Enter Text Here!" [formControl]="CurrencyStatus"></textarea>
+              <span class="remaning">{{ descriptionLength | async }} / 280</span>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" (click)="FetchCurrencyPost()">Fetch</button>
+            <button type="button" class="btn btn-primary" (click)="postcheckTwitter()">Post</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

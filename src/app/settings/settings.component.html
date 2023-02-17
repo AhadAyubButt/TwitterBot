@@ -1,0 +1,148 @@
+<div class="container">
+  <div class="container-fluid">
+
+    <ng-template #load>
+      <iframe class="d-flex flex-row justify-content-center TwitterLoader"
+        src="https://embed.lottiefiles.com/animation/70339"></iframe>
+    </ng-template>
+
+    <div class="row">
+
+      <div class="col-lg-6">
+        <!-- Set Percentage -->
+        <div class="card">
+          <div class="card-body">
+            <h2>Set Percentage</h2>
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Percentage in postive</label>
+                <input type="number" class="form-control" placeholder="0.00%" [formControl]="posPercent">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Percentage in negative</label>
+                <input type="number" class="form-control" placeholder="-0.00%" [formControl]="negPercent">
+              </div>
+              <button type="submit" class="btn btn-primary mt-2" style="width: 100px;"
+                (click)="setPercent()">Set</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- Pause/Resume Posting -->
+        <div class="card Pause">
+          <div class="card-body">
+            <h2>Pause/Resume Posting</h2>
+            <p *ngIf="postSchedule == true">Your posting is resumed, you can paused it from here.</p>
+            <p *ngIf="postSchedule == false">Your posting is paused, you can resume it from here.</p>
+            <button class="btn btn-danger" *ngIf="postSchedule == true" style="width: 100px;"
+              (click)="pausePostSchedule()">Pause</button>
+            <button class="btn btn-success" *ngIf="postSchedule == false" style="width: 100px;"
+              (click)="resumePostSchedule()">Resume</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <!-- Currency Inverse -->
+        <div class="card mt-2">
+          <div class="card-body TableDivHeight">
+            <h2>Currency Inverter</h2>
+            <div *ngIf="listFlag; else load">
+              <table class="table align-middle mb-0 bg-white tablestyle">
+                <thead class="bg-light">
+                  <tr>
+                    <th>Country/Currency</th>
+                    <th></th>
+                    <th>Inverse</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let list of listFlag">
+                    <td>
+                      <div class="d-flex align-items-center ">
+                        <img src="../../assets/{{list.Currency}}.svg" class="rounded-circle borderRad" alt=""
+                          style="width: 45px; height: 45px" />
+                        <div class="ms-3">
+                          <p class="fw-bold mb-1">{{list.Currency}}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td></td>
+                    <td *ngIf="list.Value == true">
+                      <button (click)="deInverseflag(list)" class="btn btn-sm badge bg-danger rounded-pill d-inline">
+                        De-Inverse
+                      </button>
+                    </td>
+                    <td *ngIf="list.Value == false">
+                      <button (click)="inverseflag(list)" class="btn btn-sm badge bg-primary rounded-pill d-inline">
+                        Inverse
+                      </button>
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- Currency Inverse -->
+        <div class="card mt-2">
+          <div class="card-body TableDivHeight">
+            <h2>Currency Enabler</h2>
+            <div *ngIf="listenableFlag?.FlagData; else load">
+              <table class="table align-middle mb-0 bg-white tablestyle">
+                <thead class="bg-light">
+                  <tr>
+                    <th>Country/Currency</th>
+                    <th class="col-lg-6" *ngIf="isEnable == true">Enable/Disable
+                      <button (click)="enableAll()" class="ms-1 btn btn-sm badge bg-success rounded-pill d-inline">
+                        Enable All
+                      </button>
+                    </th>
+                    <th class="col-lg-6" *ngIf="isDisable == true">Enable/Disable
+                      <button (click)="disableAll()" class="ms-1 btn btn-sm badge bg-danger rounded-pill d-inline">
+                        Disable All
+                      </button>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let list of listenableFlag?.FlagData">
+                    <td>
+                      <div class="d-flex align-items-center ">
+                        <img src="../../assets/{{list.Currency}}.svg" class="rounded-circle borderRad" alt=""
+                          style="width: 45px; height: 45px" />
+                        <div class="ms-3">
+                          <p class="fw-bold mb-1">{{list.Currency}}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td *ngIf="list.Value == true">
+                      <button (click)="disbaleFlag(list)" class="btn btn-sm badge bg-danger rounded-pill d-inline">
+                        Disable
+                      </button>
+                    </td>
+                    <td *ngIf="list.Value == false">
+                      <button (click)="enableFlag(list)" class="btn btn-sm badge bg-primary rounded-pill d-inline">
+                        Enable
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

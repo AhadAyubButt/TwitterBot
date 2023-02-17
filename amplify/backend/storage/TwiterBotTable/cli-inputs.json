@@ -1,0 +1,14 @@
+{
+  "resourceName": "TwiterBotTable",
+  "tableName": "TwiterBotTable",
+  "partitionKey": {
+    "fieldName": "Pk",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "Sk",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

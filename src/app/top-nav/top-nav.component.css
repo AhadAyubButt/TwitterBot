@@ -1,0 +1,35 @@
+/* .img-thumbnail:hover{
+    opacity: 0.5;
+    transition: opacity 200ms ease-in;
+  }
+  
+  ul{
+    z-index: 9999;
+    position: absolute;
+    background-color: white;
+    margin-top: 40px;
+    list-style: none;
+    width: 63%;
+    line-height: 30px;
+    display: none;
+  }
+  
+  .grow:hover { transform: scale(1.2);
+  transition: all .6s ease-in-out; } */
+  body {
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar-brand {
+    background-image: url("https://cdn.usbrandcolors.com/images/logos/twitter-logo.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    margin-left: 7px !important;
+  }
+  
+  .navbar-nav .nav-item:hover {
+    background-color:#1DA1F2;
+  }
+  

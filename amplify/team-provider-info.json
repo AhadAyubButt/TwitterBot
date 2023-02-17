@@ -1,0 +1,40 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-twitterbot-dev-221331-authRole",
+      "UnauthRoleArn": "arn:aws:iam::635411690007:role/amplify-twitterbot-dev-221331-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::635411690007:role/amplify-twitterbot-dev-221331-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-twitterbot-dev-221331-deployment",
+      "UnauthRoleName": "amplify-twitterbot-dev-221331-unauthRole",
+      "StackName": "amplify-twitterbot-dev-221331",
+      "StackId": "arn:aws:cloudformation:us-west-2:635411690007:stack/amplify-twitterbot-dev-221331/c44bab70-1d86-11ed-ae93-0204ffd20277",
+      "AmplifyAppId": "d2kln15vy7w10q",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-twitterbot-dev-221331-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "undefined": {},
+        "twitterbot": {}
+      },
+      "function": {
+        "TwiterBotCRUD": {
+          "deploymentBucketName": "amplify-twitterbot-dev-221331-deployment",
+          "s3Key": "amplify-builds/TwiterBotCRUD-366e5748494632795167-build.zip"
+        },
+        "TwiterBotData": {
+          "deploymentBucketName": "amplify-twitterbot-dev-221331-deployment",
+          "s3Key": "amplify-builds/TwiterBotData-58417275537565496937-build.zip"
+        },
+        "TwiterBotData2": {
+          "deploymentBucketName": "amplify-twitterbot-dev-221331-deployment",
+          "s3Key": "amplify-builds/TwiterBotData2-5255796b39347433774c-build.zip"
+        },
+        "TwiterBotPost": {
+          "deploymentBucketName": "amplify-twitterbot-dev-221331-deployment",
+          "s3Key": "amplify-builds/TwiterBotPost-2f63676852446f6b3468-build.zip"
+        }
+      }
+    }
+  }
+}
